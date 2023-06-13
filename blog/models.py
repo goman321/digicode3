@@ -55,6 +55,10 @@ class Comment(models.Model):
         self.approved_comment = True
         self.save()
 
+    def jcreated(self):
+        return jalali_converter(self.created_date)
+    jcreated.short_description = "زمان نوشتن کامنت"
+
     def __str__(self):
         return self.text
 
