@@ -37,6 +37,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12 rtl-text">
+						<a href="{% url 'post_detail' slug=post.slug %}">Comments: {{ post.comments.count }}</a>
 						{% for comment in post.comments.all %}
 							<div class="comment">
 								<div class="date">{{ comment.created_date }}</div>
