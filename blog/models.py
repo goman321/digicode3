@@ -25,7 +25,7 @@ class Post(models.Model):
     description = models.TextField(max_length=500, verbose_name="توضیحات") # meta description
     # tags = models.TagsField # meta tags
     slug = models.SlugField(verbose_name="آدرس پست")
-    category = models.ManyToManyField(BlogCategory, verbose_name="دسته‌بندی")
+    category = models.ManyToManyField(Category, verbose_name="دسته‌بندی")
     publish_time = models.DateTimeField(default=timezone.now(), verbose_name="زمان انتشار")
     created_time = models.DateTimeField(auto_now_add=True, verbose_name="زمان نوشتن")
     last_update_time = models.DateTimeField(auto_now=True, verbose_name="زمان آخرین تغییر")
@@ -45,7 +45,7 @@ class Post(models.Model):
 
 
 class Comment(models.Model):
-    post = models.ForeignKey('blog.BlogPost', on_delete=models.CASCADE, related_name='comments', verbose_name="پست")
+    post = models.ForeignKey('blog.Post', on_delete=models.CASCADE, related_name='comments', verbose_name="پست")
     author = models.CharField(max_length=200, verbose_name="کاربر")
     text = models.TextField(verbose_name="متن کامنت")
     created_date = models.DateTimeField(default=timezone.now, verbose_name="زمان ثبت کامنت")
@@ -57,3 +57,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+    class Meta:
+        verbose_name = "کامنت"
+        verbose_name_plural = "کامنت ها"
