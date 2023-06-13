@@ -1,0 +1,33 @@
+<!-- {% load cache %} -->
+{% load static %}
+<!-- {% cache 500 content %} -->
+<header class="header-area header-rtl">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="main-nav">
+                    <!-- ***** Logo Start ***** -->
+                    <a href="/" class="logo">
+                        <img height="35" data-src="{% static 'img/logo-light.svg' %}" class="light-logo lozad" alt="دیجی کد"/>
+                        <img height="35" data-src="{% static 'img/logo-dark.svg' %}" class="dark-logo lozad" alt="دیجی کد"/>
+                    </a>
+                    <!-- ***** Logo End ***** -->
+
+                    <!-- ***** Menu Start ***** -->
+                    <ul class="nav rtl-row">
+                        <li><a href="/">خانه</a></li>
+                        <li><a href="rtl-our-work.html">نمونه کار های ما </a></li>
+                        <li><a href="/about-us">درباره ما</a></li>
+                        <li><a href="/services">خدمات و سرویس ها</a></li>
+                        <li><a href="/blog">وبلاگ</a></li>
+                        <li><a href="/contact" class="btn-nav-line">تماس با ما</a></li>
+                    </ul>
+                    <a class="menu-trigger">
+                        <span>منو</span>
+                    </a>					
+                </nav>
+            </div>
+        </div>
+    </div>
+</header>
+<!-- {% endcache %} -->
