@@ -1,0 +1,3 @@
+django
+django_ckeditor
+psycopg2
